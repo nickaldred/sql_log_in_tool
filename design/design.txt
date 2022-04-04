@@ -1,0 +1,32 @@
+Title: Account Log in
+
+Description:
+
+An online app that allows the user to create an account using there details: first name, surname, 
+job position, age, email address, username & password. The user will store these details into an encrypted database.
+The new user can then use these details to log in to the system, the system will check the user name and password entered against
+what is held in the database using a search method if the details are correct the system will let the user pass through if not it will
+decline access. 
+
+Objects:
+
+	User: 
+		first_name
+		surname
+		job position
+		date_of_bith
+		email_address
+		username
+		password
+		
+		check_details()
+		encrypt_details()
+		store_details()
+
+
+	Log_In_User:
+		username
+		password
+		
+		find_user()
+		check_details()	

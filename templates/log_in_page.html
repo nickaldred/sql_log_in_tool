@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log In Page</title>
+    <link rel="stylesheet" href="static/main.css"
+</head>
+<body>
+    <div class="user_log_in">
+    <div class="white-box">
+
+        
+        <h2>Login</h2>
+        <p>Please enter your Email and Password        
+
+        </p>
+        <p>
+        {% if result %}
+        {{log}}
+        {% endif %}
+        </p>
+
+
+        <form action ="" method="post">
+            
+            
+            <div class = "margin-left">
+            {{loginform.username.label}}
+            </div>
+            
+            
+            
+            <div class = "center">
+            {{loginform.username}}
+            </div>
+            
+            <br> <br> 
+            <div class = "margin-left">
+            {{loginform.password.label}}
+            </div>
+
+            <div class = "center">
+            {{loginform.password}}
+            </div>
+
+            <br>
+            <br>
+            
+            <div class = "center">
+                {{loginform.button}}
+            </div>
+
+            
+
+
+        </form>
+        <br>
+        <p>Don't have an account? <a href="/create_account">Sign up</a></p>
+
+    </div>
+
+    </div>
+   
+
+</body>
+</html>

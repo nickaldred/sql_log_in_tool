@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="static/main.css"
+</head>
+<body>
+    <div class="white-box">
+
+        <h2>Create Account</h2>
+        <form action ="/create_account" method="post">
+            <div class = "margin-left">
+                {{accform.firstname.label}}
+            </div>
+
+            <div class = "center">
+                {{accform.firstname}}
+            </div> 
+
+            <br>
+            <div class = "margin-left">
+            {{accform.surname.label}}  
+            </div>
+            <div class = "center">
+            {{accform.surname}}
+            </div>
+            <br>
+            <div class = "margin-left">
+            {{accform.username.label}}
+            </div>
+
+            <div class = "center">
+            {{accform.username}}
+            </div>
+            <br>
+            <div class = "margin-left">
+            {{accform.password.label}} 
+            </div>
+
+            <div class = "center">
+            {{accform.password}}
+            </div>
+            <br>
+
+            <div class = "center">
+                {{accform.button}}
+            </div>
+
+            <div class = "center">
+                <br>
+                {% if result %}
+
+                {{log}}
+    
+                {% endif %}
+            </div>
+            
+        </div>
+
+
+
+
+        
+
+        
+    </div>
+
+
+</body>
+</html>
