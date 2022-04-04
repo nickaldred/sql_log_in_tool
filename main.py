@@ -96,4 +96,4 @@ class AccForm(Form):
 app.add_url_rule('/', view_func=LogInPage.as_view('log_in_page'))
 app.add_url_rule('/create_account', view_func=RegPage.as_view('create_account'))
 
-app.run(debug=True)
+#app.run(debug=True)
