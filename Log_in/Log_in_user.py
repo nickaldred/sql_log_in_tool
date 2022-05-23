@@ -5,7 +5,8 @@ class Log_in_user:
     """An object that creates a log in user using the details provided, 
     has methods to search through the database to see if the
     user exists and then if the user exists it will check the 
-    details provided against what is stored in the encrypted database"""
+    details provided against what is stored in the encrypted 
+    database."""
     
 
     def __init__(self, username, password):

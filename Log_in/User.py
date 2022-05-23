@@ -13,8 +13,9 @@ load_dotenv()
 
 
 class User: 
-    """An object that creates a user using the provided details and then 
-    encrypts that data and stores it in a database for future use"""
+    """An object that creates a user using the provided details and 
+    then encrypts that data and stores it in a database for future 
+    use."""
     
 
     def __init__ (self, first_name, surname, email_address, password):
@@ -25,9 +26,9 @@ class User:
 
     def check_details(self, render_template, accform, password, firstname, 
         surname, email):
-        """ A method that runs all the other methods of the class to create a 
-        list of errors contained in dictionarys and returns the render template 
-        based on error or non error"""
+        """ A method that runs all the other methods of the class to 
+        create a list of errors contained in dictionarys and returns 
+        the render template based on error or non error."""
 
         error = (self.check_first_name(), self.check_surname(), 
         self.check_email(), self.check_password())
@@ -52,15 +53,15 @@ class User:
 
 
         else:
-            #encrypts password with bcrypt
+            #Encrypts password with bcrypt.
             encrpyt = Password(password)
             hashed = encrpyt.hash()
             hashed = hashed.decode("utf-8") 
             newuser = User(first_name=firstname, surname=surname, 
             email_address=email, password=hashed)
 
-            #connects to the account database and create a cursor, then saves 
-            # the account to the database.
+            #Connects to the account database and create a cursor, 
+            # then saves the account to the database.
             database = Db(host=os.environ.get("MYSQL_HOST"),
             user=os.environ.get("MYSQL_USER"), 
             password=os.environ.get("MYSQL_PASS"), 
@@ -95,7 +96,7 @@ class User:
 
     def check_surname(self):
         """
-        A method that checks the second name is not empty
+        A method that checks the second name is not empty.
         
         """
 
@@ -127,8 +128,8 @@ class User:
         
     def check_password(self):
         """
-        A method that checks the password is a valid password in the correct 
-        format.
+        A method that checks the password is a valid password in the 
+        correct format.
         """    
 
         error = {"password": True} 

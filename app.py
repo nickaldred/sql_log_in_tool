@@ -46,8 +46,8 @@ class LogInPage(MethodView):
 
 class RegPage(MethodView):
     """
-    Create a registration page oject return the registration form and then 
-    gathers the details on the post request.
+    Create a registration page oject return the registration form and 
+    then gathers the details on the post request.
     """
     def get(self):
         acc_form = AccForm()

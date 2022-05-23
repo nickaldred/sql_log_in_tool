@@ -22,8 +22,8 @@ class Db:
 
 
     def connect_db(self):
-        """ Connects to the database using the details provided to the class 
-        and returns the connection so it can be utilised
+        """ Connects to the database using the details provided to the 
+        class and returns the connection so it can be utilised
         """
 
         conn = mysql.connector.connect(
@@ -37,15 +37,15 @@ class Db:
 
 
     def create_cursor(self, conn):
-        """Creates and returns a cursor for the mySQL connection that can be 
-        used to interact with the database """ 
+        """Creates and returns a cursor for the mySQL connection that 
+        can be used to interact with the database.""" 
 
         cursor = conn.cursor()
         return(cursor)
 
 
     def create_db(self, cursor):
-        """Creates a database and table using the mySQL connection"""
+        """Creates a database and table using the mySQL connection."""
 
         cursor.execute("CREATE DATABASE IF NOT EXISTS sql4483509")
         cursor.execute("""CREATE TABLE IF NOT EXISTS account
@@ -56,8 +56,8 @@ class Db:
 
 
     def add_data(self, cursor, account):
-        """A method to add a new account to the table using the mySQL connection
-        and using an account object   
+        """A method to add a new account to the table using the mySQL 
+        connection and using an account object.
         """
         cursor.execute(f"""INSERT INTO account (email, firstname, surname, password) VALUES 
         ('{account.email_address}','{account.first_name}','{account.surname}','{account.password}')""")
@@ -70,20 +70,20 @@ class Db:
 
 
     def delete_all_rows(self, cursor):
-        """A method that deletes all the accounts contained in the accounts 
-        table"""
+        """A method that deletes all the accounts contained in the 
+        accounts table."""
 
         cursor.execute("DELETE FROM account ")
 
 
     def delete_acc(self, cursor, email):
-        """A method that deletes an account from the table"""
+        """A method that deletes an account from the table."""
         
         cursor.execute(f"DELETE FROM account WHERE email = {email}")
 
     def find_acc(self, cursor, email):
-        """A method that finds and returns an account details using the email 
-        provided"""
+        """A method that finds and returns an account details using the 
+        email provided."""
         cursor.execute(f"SELECT * From account WHERE email = '{email}'")
         result = cursor.fetchall()
         return(result)
@@ -97,8 +97,9 @@ class Db:
 
 
 class User: 
-    """An object that creates a user using the provided details and then 
-    encrypts that data and stores it in a database for future use"""
+    """An object that creates a user using the provided details and 
+    then encrypts that data and stores it in a database for future 
+    use."""
     
 
     def __init__ (self, first_name, surname, email_address, password):
@@ -108,32 +109,4 @@ class User:
         self.password = password
 
 
-# newuser = User(first_name="Caitlin", surname="Abbiss", email_address="Caitlinabbiss@hotmail.co.uk", password="test123") 
-
-# database = Db(host="localhost",user="root", password="test123", database="accountinfo2")
-
-
-
-
-
-# conn = database.connect_db()
-# cursor = database.create_cursor(conn)
-# #database.create_db(cursor)
-# #database.add_data(cursor=cursor, account=newuser) 
-# #database.commit_data(conn=conn)
-
-# #cursor.execute("SELECT * From account WHERE email = 'nickaldred@hotmail.co.uk'")
-# #result = cursor.fetchall()
-# #print(result[0][1])
-
-# #print(database.find_acc(cursor=cursor, email="nickaldred@hotmail.co.uk"))
-
-
-
-# cursor.execute("SELECT * FROM account")
-
-# result = cursor.fetchall()
-
-# for row in result:
-#     print(row)
 
